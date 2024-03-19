@@ -39,6 +39,16 @@ For Windows:
 
 If there are errors running the program described above, please look under Trouble shooting guide or [open an issue here,](https://github.com/X-com/RealmShark/issues) so it can be resolved.
 
+For Linux:
+
+1. Java and libpcap required for running the program. Install them using your package manager if not already installed.
+
+2. Download the latest `Tomato-v*.jar` file from [Releases](https://github.com/X-com/RealmShark/releases). Only need the *.jar file.
+
+3. Run the program by simply opening the downloaded Tomato-v*.jar file.
+
+4. The RealmShark GUI should open. Start it by clicking File -> Start Sniffer. All chat in the game should appear in the Chat tab.
+
 ## Troubleshooting guide
 
 Join discord for live tech support: https://discord.gg/uDK2EhJUtv
@@ -70,6 +80,14 @@ If you can start the program, but you can not see any chat messages from ingame 
 5. If it still doesn't fix the problem follow a youtube guide to install a Loopback Adapter [here](https://www.youtube.com/watch?v=N3Ido5VEkNE).
 
 If any other problem shows up. Please report them in the issues tracker found [here](https://github.com/X-com/RealmShark/issues) to have it resolved. Make sure to include any console outputs, version of java installed (type "java -v" in console to get the version), windows version and other reproduction steps.
+
+Linux troubleshooting guide:
+
+- I get java.nio.file.NoSuchFileException
+  - The sniffer expects your game install to be in a specific location and dies if it isn't. Symlink the real location to the expected location.
+
+- I get pcap.spi.exception.error.PermissionDeniedException
+  - Change your system configuration so that the sniffer is allowed to listen to tcp socket 2050 or run the sniffer with root.
 
 ## Building from source!
 
