@@ -74,12 +74,13 @@ public class Sniffer {
 
             try {
                 pcap = service.live(interfaceList[i], defaultLiveOptions);
+		pcap.setFilter("tcp port " + port, true);
             } catch (Exception e) {
                 e.printStackTrace();
                 continue;
             }
 
-            pcap.setFilter("tcp port " + port, true);
+
             pcaps[i] = pcap;
 
             startPacketSniffer(pcap);
